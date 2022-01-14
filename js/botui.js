@@ -30,7 +30,7 @@ function bot_ui_ini() {
         }).then(function () {
             botui.message.add({
                 delay: 1100,
-                content: "一个可爱的蓝孩子~"
+                content: "欢迎来到我的博客~"
             }).then(function () {
                 botui.action.button({
                     delay: 1600,
