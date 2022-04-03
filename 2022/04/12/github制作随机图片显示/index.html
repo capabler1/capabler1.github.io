@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">archive_a: 2018 | 竟然被你发现了</title>
+  <title itemprop="name">github制作随机图床图片展示链接 | 竟然被你发现了</title>
   
     <link rel="shortcut icon" href="/images/favicon.ico">
   
@@ -349,120 +349,109 @@
   </div>
 </header>
 
-      <div class="blank" style="padding-top: 75px;">
-</div>
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+<div class="pattern-center-blank"></div>
+
 <div id="content" class="site-content">
-  <div id="main">
-    <header class="page-header">
-      <h1 class="cat-title">
-      归档</h1>
-      <span class="cat-des">
-        <p>
-        Archives</p>
-      </span>
-    </header>
-    <div id="main-part">
-      <article class="art">
-        <div class="art-main">
-          <div class="art-content">
-            <div id="archives">
-              <p style="text-align:right;">
-                [<span id="al_expand_collapse" style="cursor: s-resize;">
-                全部展开/收缩</span>
-              ]</p>
-              
-              
-              
-              
-              
-                
-                <h3 class="al_year">2022年</h3>
-              
-              
-                
-                <ul class="al_mon_list">
-                  <li class="al_li">
-                    <span class="al_mon" style="cursor: s-resize;">
-                      04月(<span id="post-num">
-                      3</span>
-                    篇文章)</span>
-                    <ul class="al_post_list" style="">
-              
-                      <li>
-                        <a href="/2022/04/12/github%E5%88%B6%E4%BD%9C%E9%9A%8F%E6%9C%BA%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA/">
-                          <span style="color:#0bf;">
-                          12日22:16:01</span>
-                          github制作随机图床图片展示链接
-                        </a>
-                      </li>
-                      
-                    </ul>
-                  </li>
-                </ul>
-              
-              
-              
-              
-              
-              
-                
-                <ul class="al_mon_list">
-                  <li class="al_li">
-                    <span class="al_mon" style="cursor: s-resize;">
-                      01月(<span id="post-num">
-                      3</span>
-                    篇文章)</span>
-                    <ul class="al_post_list" style="">
-              
-                      <li>
-                        <a href="/2022/01/11/%E6%88%91%E7%9A%84%E4%B9%A6%E5%8D%95/">
-                          <span style="color:#0bf;">
-                          11日23:41:45</span>
-                          capabler1的书单
-                        </a>
-                      </li>
-                      
-                    </ul>
-                  </li>
-                </ul>
-              
-              
-              
-              
-              
-                
-                <h3 class="al_year">2018年</h3>
-              
-              
-                
-                <ul class="al_mon_list">
-                  <li class="al_li">
-                    <span class="al_mon" style="cursor: s-resize;">
-                      12月(<span id="post-num">
-                      3</span>
-                    篇文章)</span>
-                    <ul class="al_post_list" style="">
-              
-                      <li>
-                        <a href="/2018/12/12/Hexo-Theme-Sakura/">
-                          <span style="color:#0bf;">
-                          12日22:16:01</span>
-                          Hexo-Theme-Sakura
-                        </a>
-                      </li>
-                      
-                    </ul>
-                  </li>
-                </ul>
-              
-              
+  <div id="primary" class="content-area">
+    <main id="main" class="site-main" role="main">
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+          <header class="entry-header">
+            <h1 class="entry-title">github制作随机图床图片展示链接</h1>
+            <p class="entry-census">capabler1&nbsp;·&nbsp;2022-4-12&nbsp;·&nbsp;<span id="busuanzi_value_page_pv"></span>次阅读</p></p>
+
+            <hr>
+          </header>
+        
+        <div class="entry-content">
+          <p>使用博客的时候背景图片使用了别人的随机图片api，就像自己也做一个随机图像api。<br>我的想法是将自己喜欢的部分画师的作品放到github，把github当作自己的图床，我将图片压缩成webp格式这样图片画质不会下降太多，占用空间也大幅度缩小。<br>!()[<a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/capabler1/imagerepo@1.0/use/01.png]">https://cdn.jsdelivr.net/gh/capabler1/imagerepo@1.0/use/01.png]</a><br>以此为基础制作随机图片api，这里建议将图床库发行一个版本，这样就可以直接使用免费的cdn——jsdelvr进行加速，这样即可更加快速的访问到图片。<br>在网络搜索之后看到大多数是使用php制作随机图片api的，而且看上去也方便容易，可以很方便的制作，只需要准备好图片的网址，写在文本文档中，然后进行随机数选择图片。但我存放的图片有一百多张就使用python的os.dirlist遍历本地文件夹中的文件名然后加工一下，再输出到文本文档即可，方便快捷。<br>php随机数选择读取某列的图片网址，然后进行重定向，即可获得目标图片。将其放在github库中才发现执行不了，这才想到github不会执行php文件，这就很尴尬了，该怎么办呢？<br>由于本人为资深白飘党而且只是为了制作一个随机图片api就买云服务器，弄域名我实在感觉没必要，我博客也是使用hexo在github部署的静态网站，并没有暂时想要深究博客并进行花费的想法，而且能看到我博客的人也不会多。<br>最后我又想到既然php不行那我干脆使用js不就行了？创建一个html文件，然后写入js随机数，定义一个数组将图片网址放入，然后使用随机数选择，最后进行js重定向，这样不就行了？不愧是我，竟然能想到这种方法。<br>然后放入库中进行访问，发现好是不行，为什么？原来是我忘记开启github pages进行托管了。<br>开启托管后即可访问网页，这里似乎不能使用jsdelivr进行加速，我不太了解，结果并没有像图片一样顺利。<br>直接访问网页，<br>!()[<a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/capabler1/imagerepo@1.0/use/02.png]">https://cdn.jsdelivr.net/gh/capabler1/imagerepo@1.0/use/02.png]</a><br>!()[<a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/capabler1/imagerepo@1.0/use/03.png]">https://cdn.jsdelivr.net/gh/capabler1/imagerepo@1.0/use/03.png]</a><br>终于！重定向成功，访问到了我图床中的图片，再次访问，图片变成了另一张！<br>!()[<a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/capabler1/imagerepo@1.0/use/04.png]">https://cdn.jsdelivr.net/gh/capabler1/imagerepo@1.0/use/04.png]</a><br>然而之后我发现我错了，普通地访问链接确实可以找到图片，这和其它使用服务器使用php文件制作的api似乎效果一样，然而进行实验的时候发现无法在html文件的img src中使用，无法得到图片。<br>这又是为什么？<br>粗略见解，漏洞百出。<br>我的脚步止步于此，由于对js等的了解仅限于一点皮毛，暂时并未找到更好的方法，如果有人看到本篇文章，并且有方法解决问题，请联系并告诉我，跪谢！<br>求大佬带啊啊啊！至今没有找到对编程感兴趣的同好，来个跟我共同进步的道友或直接带飞的大佬就好了。</p>
+
+        </div>
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏
+            <div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/custom/donate/AliPayQR.jpg"></li>
+                <li class="wechat-code"><img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/custom/donate/WeChanQR.jpg"></li>
+              </ul>
             </div>
           </div>
         </div>
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <footer class="post-footer">
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
       </article>
-    </div>
-  </div>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+        
+          
+            <div class="post-nepre full next">
+          
+            <a href="/2022/01/11/%E6%88%91%E7%9A%84%E4%B9%A6%E5%8D%95/" rel="next">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                capabler1的书单</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+      </section>
+      
+<div id="vcomments"></div>
+<script>
+  window.onload = function(){
+      var valine = new Valine();
+      valine.init({
+        el: '#vcomments',
+        appId: "JnWn2UqSqPIEh6McxiMd24JH-gzGzoHsz",
+        appKey: "64mbOYnwymWUJkLeL4JozbRJ",
+        path: window.location.pathname,
+        placeholder: "你是我一生只会遇见一次的惊喜 ..."
+      })
+  }
+</script>
+
+
+
+
+      <section class="author-profile">
+        <div class="info" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
+          <a href="hojun.cn" class="profile gravatar"><img src="" itemprop="image" alt="capabler1" height="70" width="70"></a>
+          <div class="meta">
+            <span class="title">Author</span>
+            <h3 itemprop="name">
+            <a href="hojun.cn" itemprop="url" rel="author">capabler1</a>
+            </h3>
+          </div>
+        </div>
+        <hr>
+        <p><i class="iconfont icon-write"></i>一个好奇的人</p>
+      </section>
+    </main><!-- #main -->
+  </div><!-- #primary -->
 </div>
+
+
 
     </div>    
     <div class="ins-search">
