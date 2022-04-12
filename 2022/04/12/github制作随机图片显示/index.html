@@ -399,10 +399,32 @@
         <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          <p>使用博客的时候背景图片使用了别人的随机图片api，就像自己也做一个随机图像api。<br>我的想法是将自己喜欢的部分画师的作品放到github，把github当作自己的图床，我将图片压缩成webp格式这样图片画质不会下降太多，占用空间也大幅度缩小。<br><img src="https://cdn.jsdelivr.net/gh/capabler1/imagerepo/use/01.webp"><br>以此为基础制作随机图片api，这里建议将图床库发行一个版本，这样就可以直接使用免费的cdn——jsdelvr进行加速，这样即可更加快速的访问到图片。<br>在网络搜索之后看到大多数是使用php制作随机图片api的，而且看上去也方便容易，可以很方便的制作，只需要准备好图片的网址，写在文本文档中，然后进行随机数选择图片。但我存放的图片有一百多张就使用python的os.dirlist遍历本地文件夹中的文件名然后加工一下，再输出到文本文档即可，方便快捷。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">filePath = <span class="string">&#x27;图片文件夹路径&#x27;</span></span><br><span class="line">os.listdir(filePath)</span><br><span class="line">txt = os.listdir(filePath)</span><br><span class="line">file_handle = <span class="built_in">open</span>(<span class="string">&#x27;存放图片名的文本&#x27;</span>, mode=<span class="string">&#x27;w&#x27;</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(txt)):</span><br><span class="line">    file_handle.write(<span class="string">&#x27;&quot;&#x27;</span>+</span><br><span class="line">    <span class="string">&quot;https://cdn.jsdelivr.net/gh/用户名/仓库&quot;</span>+txt[i-<span class="number">1</span>]+<span class="string">&#x27;&quot;&#x27;</span>+<span class="string">&quot;,&quot;</span>)</span><br><span class="line"><span class="comment"># https://cdn.jsdelivr.net/gh/用户名/仓库  jsdelivr是存放到github后发行版本后可用的免费cdn</span></span><br><span class="line">file_handle.close()</span><br></pre></td></tr></table></figure>
+          <!-- 代码高亮 -->
+<link rel="stylesheet" href="//cdn.bootcss.com/highlight.js/9.2.0/styles/github.min.css">
+<script src="//cdn.bootcss.com/highlight.js/9.2.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<p>使用博客的时候背景图片使用了别人的随机图片api，就像自己也做一个随机图像api。<br>我的想法是将自己喜欢的部分画师的作品放到github，把github当作自己的图床，我将图片压缩成webp格式这样图片画质不会下降太多，占用空间也大幅度缩小。<br><img src="https://cdn.jsdelivr.net/gh/capabler1/imagerepo/use/01.webp"><br>以此为基础制作随机图片api，这里建议将图床库发行一个版本，这样就可以直接使用免费的cdn——jsdelvr进行加速，这样即可更加快速的访问到图片。<br>在网络搜索之后看到大多数是使用php制作随机图片api的，而且看上去也方便容易，可以很方便的制作，只需要准备好图片的网址，写在文本文档中，然后进行随机数选择图片。但我存放的图片有一百多张就使用python的os.dirlist遍历本地文件夹中的文件名然后加工一下，再输出到文本文档即可，方便快捷。</p>
+<pre><code class="python">import os
+filePath = &#39;图片文件夹路径&#39;
+os.listdir(filePath)
+txt = os.listdir(filePath)
+file_handle = open(&#39;存放图片名的文本&#39;, mode=&#39;w&#39;)
+for i in range(len(txt)):
+    file_handle.write(&#39;&quot;&#39;+
+    &quot;https://cdn.jsdelivr.net/gh/用户名/仓库&quot;+txt[i-1]+&#39;&quot;&#39;+&quot;,&quot;)
+# https://cdn.jsdelivr.net/gh/用户名/仓库  jsdelivr是存放到github后发行版本后可用的免费cdn
+file_handle.close()
+</code></pre>
 <p>php随机数选择读取某列的图片网址，然后进行重定向，即可获得目标图片。将其放在github库中才发现执行不了，这才想到github不会执行php文件，这就很尴尬了，该怎么办呢？<br>由于本人为资深白飘党而且只是为了制作一个随机图片api就买云服务器，弄域名我实在感觉没必要，我博客也是使用hexo在github部署的静态网站，并没有暂时想要深究博客并进行花费的想法，而且能看到我博客的人也不会多。<br>最后我又想到既然php不行那我干脆使用js不就行了？创建一个html文件，然后写入js随机数，定义一个数组将图片网址放入，然后使用随机数选择，最后进行js重定向，这样不就行了？不愧是我，竟然能想到这种方法。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 用于重定向的html文件 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">language</span>=<span class="string">&quot;javascript&quot;</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><span class="javascript"></span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> a = [将存放于文本中的图片网址复制到这里]</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> item = a[<span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * a.length)];</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> b = <span class="built_in">String</span>(item)</span></span><br><span class="line"><span class="javascript">    <span class="built_in">window</span>.location.href = b;</span></span><br><span class="line"><span class="javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="html">&lt;!-- 用于重定向的html文件 --&gt;
+&lt;script language=&quot;javascript&quot; type=&quot;text/javascript&quot;&gt;
+    var a = [将存放于文本中的图片网址复制到这里]
+    var item = a[Math.floor(Math.random() * a.length)];
+    var b = String(item)
+    window.location.href = b;
+&lt;/script&gt;
+</code></pre>
 <p>然后放入库中进行访问，发现好是不行，为什么？原来是我忘记开启github pages进行托管了。<br>开启托管后即可访问网页，这里似乎不能使用jsdelivr进行加速，我不太了解，结果并没有像图片一样顺利。<br>直接访问网页，<br><img src="https://cdn.jsdelivr.net/gh/capabler1/imagerepo/use/02.webp"><br><img src="https://cdn.jsdelivr.net/gh/capabler1/imagerepo/use/03.webp"><br>终于！重定向成功，访问到了我图床中的图片，再次访问，图片变成了另一张！<br><img src="https://cdn.jsdelivr.net/gh/capabler1/imagerepo/use/04.webp"><br>然而之后我发现我错了，普通地访问链接确实可以找到图片，这和其它使用服务器使用php文件制作的api似乎效果一样，然而进行实验的时候发现无法在html文件的img src中使用，无法得到图片。<br>这又是为什么？<br>粗略见解，漏洞百出。<br>我的脚步止步于此，由于对js等的了解仅限于一点皮毛，暂时并未找到更好的方法，如果有人看到本篇文章，并且有方法解决问题，请联系并告诉我，跪谢！<br>求大佬带啊啊啊！至今没有找到对编程感兴趣的同好，来个跟我共同进步的道友或直接带飞的大佬就好了。</p>
 
         </div>
