@@ -400,9 +400,9 @@
         
         <div class="entry-content">
           <!-- 代码高亮 -->
-<link rel="stylesheet" href="//cdn.bootcss.com/highlight.js/9.2.0/styles/github.min.css">
+<!-- <link rel="stylesheet" href="//cdn.bootcss.com/highlight.js/9.2.0/styles/github.min.css">
 <script src="//cdn.bootcss.com/highlight.js/9.2.0/highlight.min.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
+<script>hljs.initHighlightingOnLoad();</script> -->
 
 <p>使用博客的时候背景图片使用了别人的随机图片api，就像自己也做一个随机图像api。<br>我的想法是将自己喜欢的部分画师的作品放到github，把github当作自己的图床，我将图片压缩成webp格式这样图片画质不会下降太多，占用空间也大幅度缩小。<br><img src="https://cdn.jsdelivr.net/gh/capabler1/imagerepo/use/01.webp"><br>以此为基础制作随机图片api，这里建议将图床库发行一个版本，这样就可以直接使用免费的cdn——jsdelvr进行加速，这样即可更加快速的访问到图片。<br>在网络搜索之后看到大多数是使用php制作随机图片api的，而且看上去也方便容易，可以很方便的制作，只需要准备好图片的网址，写在文本文档中，然后进行随机数选择图片。但我存放的图片有一百多张就使用python的os.dirlist遍历本地文件夹中的文件名然后加工一下，再输出到文本文档即可，方便快捷。</p>
 <pre><code class="python">import os
@@ -458,15 +458,15 @@ file_handle.close()
           
             <div class="post-nepre full next">
           
-            <a href="/2022/01/11/%E6%88%91%E7%9A%84%E4%B9%A6%E5%8D%95/" rel="next">
+            <a href="/2022/04/12/%E9%A1%B5%E9%9D%A2%E6%A0%87%E9%A2%98%E5%8A%A8%E6%80%81%E5%8F%98%E6%8D%A2/" rel="next">
               <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://s.cn.bing.net/th?id=OIP-C.XEdVtvaveFoVIiZuCu22SwHaF7&w=279&h=223&c=8&rs=1&qlt=90&o=6&dpr=1.25&pid=3.1&rm=2" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://s.cn.bing.net/th?id=OIP-C.XEdVtvaveFoVIiZuCu22SwHaF7&w=279&h=223&c=8&rs=1&qlt=90&o=6&dpr=1.25&pid=3.1&rm=2">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/capabler1/imagerepo@1.0/webp/64622868_p2.webp" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/capabler1/imagerepo@1.0/webp/64622868_p2.webp">
               </div>
               <span class="label">
               Next Post</span>
               <div class="info">
                 <h3>
-                capabler1的书单</h3>
+                动态更换页面标题</h3>
                 <hr>
               </div>
             </a>
@@ -906,14 +906,7 @@ $(document).ready(function() {
   <script src="https://cdn.jsdelivr.net/gh/wallleap/cdn/js/love.js"></script>
   <!-- TODO标签页事件 -->
   <!-- <script src="https://cdn.jsdelivr.net/gh/wallleap/cdn@latest/js/hititle.js"></script> -->
-  <script type="text/javascript">
-    window.onblur = function () {
-      document.title = "回来qwq";
-    };
-    window.onfocus = function () {
-      document.title = "capabler1的小窝";
-    }
-  </script>
+  <script src="https://cdn.jsdelivr.net/gh/capabler1/cdn@master/js/hititle.js"></script>
   <!-- TODO樱花飘落特效 -->
   <script src="https://cdn.jsdelivr.net/gh/wallleap/cdn/js/sakura.js"></script>
   <!-- TODOlive2d看板娘 -->
