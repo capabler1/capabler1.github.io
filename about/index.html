@@ -1,3 +1,12 @@
+<!--
+ * @Descripttion: your project
+ * @version: 1.0
+ * @Author: capabler1
+ * @Emil: capabler1@gmail.com
+ * @Date: 2022-01-10 23:00:19
+ * @LastEditors: capabler1
+ * @LastEditTime: 2022-10-07 01:02:43
+-->
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -850,7 +859,18 @@ $(document).ready(function() {
   <!-- TODO樱花飘落特效 -->
   <script src="https://gcore.jsdelivr.net/gh/wallleap/cdn/js/sakura.js"></script>
   <!-- TODOlive2d看板娘 -->
-  <script src="https://gcore.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
+
+  <script src="https://unpkg.com/live2d-widget/lib/L2Dwidget.min.js"></script>
+  <script src="https://unpkg.com/live2d-widget/lib/L2Dwidget.0.min.js"></script>
+  <script>
+    L2Dwidget.init({
+      "model": { jsonPath: "https://unpkg.com/live2d-widget-model-shizuku@1.0.5/assets/shizuku.model.json", "scale": 1 },
+      "display": { "position": "right", "width": 150, "height": 300, "hOffset": 70, "vOffset": -20 }
+    });
+  </script>
+  <!-- 这个看板娘好用但需要翻墙就先不用了 -->
+  <!-- <script src="https://gcore.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script> -->
+
   <!-- TODO预下载设置 -->
   <script src="//instant.page/3.0.0" type="module" defer
     integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
